@@ -1,0 +1,13 @@
+#docker run -it -p 8080:8080 --env INSTALL_EXTENSIONS=true --env STABLE_EXTENSIONS="gdal" kcap/geoserver:2.24.x
+
+services:
+  geoserver:
+    image: kcap/geoserver:2.24.x
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - INSTALL_EXTENSIONS=true
+      - STABLE_EXTENSIONS=gdal
